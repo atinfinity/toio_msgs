@@ -1,5 +1,7 @@
 # toio_msgs
 
+[![colcon-test](https://github.com/atinfinity/toio_msgs/actions/workflows/colcon-test.yml/badge.svg)](https://github.com/atinfinity/toio_msgs/actions/workflows/colcon-test.yml)
+
 toio Core Cube の LED パターンと メロディ を表現する ROS 2 メッセージ定義。
 
 [toio_ros2](https://github.com/atinfinity/toio_ros2) が使う。単色点灯
