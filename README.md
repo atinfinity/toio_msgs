@@ -2,12 +2,12 @@
 
 [![colcon-test](https://github.com/atinfinity/toio_msgs/actions/workflows/colcon-test.yml/badge.svg)](https://github.com/atinfinity/toio_msgs/actions/workflows/colcon-test.yml)
 
-toio Core Cube の LED パターンと メロディ を表現する ROS 2 メッセージ定義。
+toio Core Cube の LED パターンとメロディを表現する ROS 2 メッセージ定義。
 
 [toio_ros2](https://github.com/atinfinity/toio_ros2) が使う。単色点灯
-(`std_msgs/ColorRGBA`) と組み込み効果音 (`std_msgs/UInt8`) は `std_msgs` の
-まま扱えるが、点滅パターンとメロディは「配列 + 繰り返し回数」を要求するため
-`std_msgs` の素の型では表現できない。
+(`std_msgs/ColorRGBA`) と組み込み効果音 (`std_msgs/UInt8`) は `std_msgs`
+のまま扱える。点滅パターンとメロディは「配列 + 繰り返し回数」を要求する
+ため、`std_msgs` の素の型では表現できない。
 
 ## メッセージ
 
@@ -19,7 +19,7 @@ toio Core Cube の LED パターンと メロディ を表現する ROS 2 メッ
 | `Melody` | `MidiNote` の並び + 繰り返し回数 |
 
 パターンとメロディはキューブ側で再生される。ホストから1コマンドずつ
-publish する場合と違い、タイミングがホストの publish 精度に依存せず、
+publish する場合と違い、タイミングがホストの publish 精度に依存しない。
 BLE が一時的に切れても再生が続く。
 
 ## 仕様上の制約
