@@ -2,7 +2,7 @@
 
 [![colcon-test](https://github.com/atinfinity/toio_msgs/actions/workflows/colcon-test.yml/badge.svg)](https://github.com/atinfinity/toio_msgs/actions/workflows/colcon-test.yml)
 
-toio Core Cube の LED パターンとメロディを表現する ROS 2 メッセージ定義。
+toio Core Cube の LED パターン、メロディ、センサー情報を表現する ROS 2 メッセージ定義。
 
 [toio_ros2](https://github.com/atinfinity/toio_ros2) が使う。単色点灯
 (`std_msgs/ColorRGBA`) と組み込み効果音 (`std_msgs/UInt8`) は `std_msgs`
@@ -17,6 +17,7 @@ toio Core Cube の LED パターンとメロディを表現する ROS 2 メッ�
 | `LedPattern` | `Led` の並び + 繰り返し回数。点滅パターン |
 | `MidiNote` | 音長 + MIDIノート番号 + 音量 |
 | `Melody` | `MidiNote` の並び + 繰り返し回数 |
+| `MotionDetection` | モーション検出（水平・衝突・ダブルタップ・姿勢・シェイク） |
 
 パターンとメロディはキューブ側で再生される。ホストから1コマンドずつ
 publish する場合と違い、タイミングがホストの publish 精度に依存しない。
@@ -34,6 +35,9 @@ toio の BLE 仕様に由来する制約があり、各メッセージに定数�
 
 これらは toio.py 側では検証されないため、送信側で守る必要がある。
 
+`MotionDetection` の `collision` と `double_tap` は瞬間的な検出で、検出した
+通知で `true`、次の通知で `false` に戻る。イベントとして扱うこと。
+
 ## ビルド
 
 ```bash
@@ -47,3 +51,4 @@ colcon build --packages-select toio_msgs
 
 - <https://toio.github.io/toio-spec/docs/ble_light>
 - <https://toio.github.io/toio-spec/docs/ble_sound>
+- <https://toio.github.io/toio-spec/docs/ble_sensor>
