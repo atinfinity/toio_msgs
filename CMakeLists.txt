@@ -14,6 +14,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/LedPattern.msg"
   "msg/MidiNote.msg"
   "msg/Melody.msg"
+  "msg/MotionDetection.msg"
   DEPENDENCIES std_msgs
 )
 

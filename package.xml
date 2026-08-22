@@ -3,7 +3,7 @@
 <package format="3">
   <name>toio_msgs</name>
   <version>1.0.0</version>
-  <description>Message definitions for toio Core Cube LED patterns and melodies</description>
+  <description>Message definitions for toio Core Cube LED patterns, melodies and sensors</description>
   <maintainer email="dandelion1124@gmail.com">atinfinity</maintainer>
   <license>Apache License 2.0</license>
   <author email="dandelion1124@gmail.com">atinfinity</author>
